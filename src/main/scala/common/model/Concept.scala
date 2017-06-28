@@ -1,4 +1,4 @@
-package model
+package common.model
 
 sealed trait Concept
 final case class TwitterHandle(handle: String) extends Concept

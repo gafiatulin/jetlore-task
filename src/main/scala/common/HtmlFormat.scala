@@ -1,3 +1,7 @@
+package common
+
+import v2.TypeClassBox
+
 trait HtmlFormat[T]{
   def htmlFormat(obj: T): String
 }
@@ -10,4 +14,6 @@ object HtmlFormat {
   implicit class HtmlFormatOps[T: HtmlFormat](obj: T){
     def htmlFormat: String = HtmlFormat[T].htmlFormat(obj)
   }
+  implicit def instanceForAny: HtmlFormat[TypeClassBox[HtmlFormat]] =
+    mkInstance(ev => ev.evidence.htmlFormat(ev.value))
 }

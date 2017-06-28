@@ -1,6 +1,9 @@
-import model._
+package v1
 
-object TweetFormatting extends ConceptFormatting{
+import common._
+import common.model._
+
+object TweetFormattingV1 extends ConceptFormatting{
   import HtmlFormat._
 
   implicit val conceptFormat: HtmlFormat[Concept] = {

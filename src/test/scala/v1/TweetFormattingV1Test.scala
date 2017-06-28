@@ -1,8 +1,10 @@
-import model._
+package v1
+
+import common.model._
 import org.scalatest.{Matchers, WordSpec}
 
-class TweetFormattingTest extends WordSpec with Matchers{
-  "TweetFormatting" should {
+class TweetFormattingV1Test extends WordSpec with Matchers{
+  "TweetFormattingV1" should {
     "processTweet" in {
       val tweet: Tweet[Concept] = Tweet(
         Seq(
@@ -19,7 +21,7 @@ class TweetFormattingTest extends WordSpec with Matchers{
           //--
         )
       )
-      TweetFormatting.processTweet(tweet) shouldBe """<strong>Obama</strong> visited <strong>Facebook</strong> headquarters: <a href="http://bit.ly/xyz">http://bit.ly/xyz</a> @<a href="https://twitter.com/elversatile">elversatile</a> <a href="https://twitter.com/hashtag/potus">#potus</a>"""
+      TweetFormattingV1.processTweet(tweet) shouldBe common.TestCommon.expected
     }
   }
 }

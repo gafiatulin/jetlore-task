@@ -1,4 +1,6 @@
-import model._
+package common
+
+import common.model._
 
 trait ConceptFormatting {
   implicit val twitterHandleFormat: HtmlFormat[TwitterHandle] =
